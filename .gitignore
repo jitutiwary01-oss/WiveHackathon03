@@ -1,0 +1,5 @@
+# Video archives and temporary files
+*.zip
+node_modules/
+.DS_Store
+Thumbs.db

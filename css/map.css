@@ -1,0 +1,847 @@
+/* ==========================================================================
+   IIT (ISM) DHANBAD — INTERACTIVE 2D CAMPUS MAP STYLES
+   ========================================================================== */
+
+:root {
+  --surface: #FAF4E6;
+  --surface-alt: #F3EBD8;
+  --border-color: #D9CBB0;
+  --border-subtle: #E8DCC4;
+  --navy: #111E29;
+  --navy-dark: #0A1219;
+  --rust: #A83224;
+  --teal-dark: #1F5F68;
+  --parchment-deep: #DFCBA4;
+  --shadow-elevated: 0 10px 30px rgba(17, 30, 41, 0.25);
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --transition: all 0.2s ease;
+}
+
+.map-page-wrapper {
+  display: flex;
+  height: calc(100vh - var(--header-height) - 34px);
+  min-height: 650px;
+  position: relative;
+  overflow: hidden;
+  background: var(--surface-alt);
+}
+
+/* Sidebar Directory */
+.map-sidebar {
+  width: 380px;
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  z-index: 500;
+  box-shadow: 2px 0 10px rgba(37, 59, 74, 0.05);
+}
+
+.map-sidebar-header {
+  padding: 1.25rem 1.25rem 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--parchment-light);
+}
+
+.map-sidebar-title {
+  font-size: 1.25rem;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.map-badge {
+  font-size: 0.7rem;
+  background: var(--navy);
+  color: var(--parchment);
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-xs);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.map-sidebar-subtitle {
+  font-size: 0.8rem;
+  color: var(--charcoal-muted);
+  margin-bottom: 0.75rem;
+}
+
+.map-search-bar {
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.map-search-input {
+  width: 100%;
+  padding: 0.65rem 0.85rem 0.65rem 2.2rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  background: var(--surface);
+}
+
+.map-search-input:focus {
+  outline: none;
+  border-color: var(--rust);
+  box-shadow: 0 0 0 2px rgba(166, 83, 60, 0.15);
+}
+
+.map-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--charcoal-muted);
+  font-size: 0.85rem;
+}
+
+/* Category Filter Chips */
+.map-category-pills {
+  display: flex;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.map-category-pill {
+  white-space: nowrap;
+  font-size: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--surface);
+  color: var(--charcoal);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.map-category-pill:hover {
+  background: var(--parchment);
+}
+
+.map-category-pill.active {
+  background: var(--navy);
+  color: var(--parchment-light);
+  border-color: var(--navy);
+}
+
+/* Directory List */
+.map-directory-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem;
+  list-style: none;
+}
+
+.map-directory-item {
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  background: var(--surface-alt);
+}
+
+.map-directory-item:hover {
+  background: var(--parchment-light);
+  border-color: var(--border-color);
+}
+
+.map-directory-item.active {
+  background: var(--parchment-light);
+  border-color: var(--rust);
+  box-shadow: 0 2px 6px rgba(166, 83, 60, 0.12);
+}
+
+.map-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+.map-item-name {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.map-item-tag {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  color: var(--rust);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.map-item-desc {
+  font-size: 0.8rem;
+  color: var(--charcoal-muted);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Empty State */
+.map-empty-state {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--charcoal-muted);
+}
+
+.map-empty-state h4 {
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.map-empty-state p {
+  font-size: 0.82rem;
+}
+
+/* Map Canvas Container */
+.map-canvas-container {
+  flex: 1;
+  height: 100%;
+  min-height: 550px;
+  position: relative;
+  background-color: #E5E0D8;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Map Mode Toolbar (Interactive 2D vs Google Maps Live View) */
+.map-mode-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 20;
+  gap: 0.75rem;
+}
+
+.map-mode-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.map-mode-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.38rem 0.85rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--surface);
+  color: var(--navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.map-mode-btn:hover {
+  background: var(--parchment-deep);
+  color: var(--rust);
+}
+
+.map-mode-btn.active {
+  background: var(--navy);
+  color: #FFFFFF;
+  border-color: var(--navy);
+  box-shadow: 0 2px 6px rgba(13, 27, 42, 0.2);
+}
+
+.map-mode-status {
+  font-size: 0.78rem;
+  color: var(--charcoal-muted);
+  font-weight: 500;
+}
+
+.google-maps-view {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 550px;
+  position: relative;
+  z-index: 10;
+}
+
+.google-maps-view iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  min-height: 550px;
+}
+
+#campusMap {
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  flex: 1;
+  z-index: 10;
+}
+
+/* Custom Leaflet Marker Styling */
+.custom-map-pin {
+  background: var(--navy);
+  border: 2px solid #FFFFFF;
+  color: var(--parchment);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.custom-map-pin:hover,
+.custom-map-pin.active {
+  transform: scale(1.2);
+  background: var(--rust);
+}
+
+.pin-academic {
+  background: var(--navy);
+}
+
+.pin-research {
+  background: var(--teal-dark);
+}
+
+.pin-hostel {
+  background: #875936;
+}
+
+.pin-sports {
+  background: #4D7358;
+}
+
+.pin-administrative {
+  background: var(--rust);
+}
+
+/* Leaflet Layer Switcher & Map Controls */
+.leaflet-control-layers {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: 0 4px 14px rgba(13, 27, 42, 0.16) !important;
+  font-family: var(--font-body) !important;
+  font-size: 0.82rem !important;
+  color: var(--navy) !important;
+  padding: 0.5rem 0.75rem !important;
+  z-index: 950 !important;
+}
+
+.leaflet-control-layers-expanded {
+  padding: 0.65rem 0.85rem !important;
+}
+
+.leaflet-control-layers label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.4rem;
+  cursor: pointer;
+  color: var(--navy);
+  font-size: 0.82rem;
+}
+
+.leaflet-control-layers label:last-child {
+  margin-bottom: 0;
+}
+
+.leaflet-control-layers input[type="radio"] {
+  accent-color: var(--rust);
+  cursor: pointer;
+}
+
+.leaflet-bar a {
+  background-color: var(--surface) !important;
+  color: var(--navy) !important;
+  border-color: var(--border-color) !important;
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--parchment-deep) !important;
+  color: var(--rust) !important;
+}
+
+/* Custom Tooltip Styling */
+.leaflet-custom-tooltip {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 0.4rem 0.65rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.leaflet-custom-tooltip::before {
+  border-top-color: var(--surface);
+}
+
+/* Detail Drawer (Panel that slides out or stays docked) */
+.map-detail-drawer {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 360px;
+  max-height: calc(100% - 2rem);
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-elevated);
+  z-index: 1000;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fadeInRight 0.25s ease;
+}
+
+.map-detail-drawer.is-open {
+  display: flex;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.drawer-image-wrap {
+  position: relative;
+  height: 180px;
+  background-color: var(--parchment-deep);
+}
+
+.drawer-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.drawer-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(25, 39, 49, 0.85);
+  color: #FFFFFF;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.drawer-content {
+  padding: 1.25rem;
+  overflow-y: auto;
+}
+
+.drawer-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--rust);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.drawer-title {
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.drawer-desc {
+  font-size: 0.88rem;
+  color: var(--charcoal-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.drawer-meta-table {
+  font-size: 0.78rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
+  border-collapse: collapse;
+}
+
+.drawer-meta-table td {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.drawer-meta-table td:first-child {
+  font-weight: 600;
+  color: var(--navy);
+  width: 40%;
+}
+
+.drawer-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Map Fallback Banner if network/tiles fail */
+.map-fallback-banner {
+  display: none;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy-dark);
+  color: var(--parchment);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  border: 1px solid var(--border-color);
+  z-index: 1000;
+}
+
+/* Mobile Drawer Backdrop */
+.map-drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 27, 42, 0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 1040;
+  transition: opacity 0.25s ease;
+}
+
+.map-drawer-backdrop.is-open {
+  display: block;
+}
+
+@keyframes drawerSlideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ============================================================ */
+
+/* 1. Laptops & Medium Desktops (up to 1100px) */
+@media (max-width: 1100px) {
+  .map-sidebar {
+    width: 320px;
+    min-width: 280px;
+  }
+
+  .map-detail-drawer {
+    width: 330px;
+    right: 0.75rem;
+    top: 0.75rem;
+  }
+}
+
+/* 2. Tablets & Small Laptops (up to 860px) */
+@media (max-width: 860px) {
+  .map-page-wrapper {
+    flex-direction: column-reverse;
+    height: auto;
+    min-height: calc(100vh - 110px);
+    overflow: visible;
+  }
+
+  /* Map Canvas sticks to top on tablet/mobile */
+  .map-canvas-container {
+    width: 100%;
+    height: 48vh;
+    min-height: 320px;
+    max-height: 480px;
+    position: sticky;
+    top: var(--header-height, 68px);
+    z-index: 30;
+    border-bottom: 2px solid var(--border-color);
+    box-shadow: 0 4px 12px rgba(13, 27, 42, 0.08);
+  }
+
+  #campusMap,
+  .google-maps-view,
+  .google-maps-view iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 0 !important;
+  }
+
+  /* Mode Toolbar on Tablets */
+  .map-mode-toolbar {
+    padding: 0.4rem 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .map-mode-btn {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .map-mode-status {
+    font-size: 0.74rem;
+  }
+
+  /* Sidebar expands to full width below map */
+  .map-sidebar {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    border-right: none;
+    background: var(--surface);
+  }
+
+  .map-sidebar-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--surface);
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(13, 27, 42, 0.04);
+  }
+
+  .map-category-pills {
+    padding: 0.25rem 0 0.5rem;
+    gap: 0.35rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .map-category-pill {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    touch-action: manipulation;
+  }
+
+  .map-directory-list {
+    padding: 0.75rem 1rem 3.5rem;
+    overflow-y: visible;
+    height: auto;
+    max-height: none;
+  }
+
+  .map-directory-item {
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.6rem;
+    touch-action: manipulation;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Bottom-Sheet Mobile Detail Drawer */
+  .map-detail-drawer {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    max-height: 78vh;
+    border-radius: 20px 20px 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 0 -8px 32px rgba(13, 27, 42, 0.35);
+    z-index: 1050;
+    animation: drawerSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Mobile Notch Drag Indicator */
+  .map-detail-drawer::before {
+    content: "";
+    display: block;
+    width: 44px;
+    height: 4px;
+    background: rgba(13, 27, 42, 0.25);
+    border-radius: 3px;
+    margin: 8px auto 2px;
+  }
+
+  .drawer-image-wrap {
+    height: 150px;
+  }
+
+  .drawer-close-btn {
+    top: 0.65rem;
+    right: 0.65rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+
+  .drawer-content {
+    padding: 1rem 1.25rem 1.5rem;
+  }
+
+  /* Touch-friendly Leaflet Controls */
+  .leaflet-touch .leaflet-bar a {
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .leaflet-control-layers {
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+}
+
+/* 3. Standard Mobile Phones (up to 580px) */
+@media (max-width: 580px) {
+  .map-canvas-container {
+    height: 42vh;
+    min-height: 280px;
+  }
+
+  .map-mode-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.4rem 0.6rem;
+    gap: 0.3rem;
+  }
+
+  .map-mode-buttons {
+    width: 100%;
+    display: flex;
+    gap: 0.35rem;
+  }
+
+  .map-mode-btn {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.74rem;
+    padding: 0.38rem 0.4rem;
+  }
+
+  .map-mode-status {
+    text-align: center;
+    font-size: 0.68rem;
+    width: 100%;
+  }
+
+  .map-sidebar-title {
+    font-size: 0.95rem;
+  }
+
+  .map-sidebar-subtitle {
+    font-size: 0.78rem;
+    line-height: 1.35;
+  }
+
+  .map-search-input {
+    font-size: 16px; /* Prevents auto-zoom in iOS Safari */
+    padding: 0.5rem 0.65rem 0.5rem 2.2rem;
+  }
+
+  .map-category-pills {
+    gap: 0.3rem;
+  }
+
+  .map-category-pill {
+    font-size: 0.72rem;
+    padding: 0.28rem 0.6rem;
+  }
+
+  .drawer-image-wrap {
+    height: 135px;
+  }
+
+  .drawer-title {
+    font-size: 1.1rem;
+  }
+
+  .drawer-desc {
+    font-size: 0.84rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .drawer-meta-table {
+    font-size: 0.75rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .drawer-actions {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .drawer-actions .btn {
+    width: 100%;
+    justify-content: center;
+    min-height: 38px;
+  }
+}
+
+/* 4. Ultra-Compact Mobile Phones (up to 380px) */
+@media (max-width: 380px) {
+  .map-canvas-container {
+    height: 38vh;
+    min-height: 250px;
+  }
+
+  .map-mode-btn {
+    font-size: 0.7rem;
+    padding: 0.32rem 0.25rem;
+  }
+
+  .map-sidebar-title {
+    gap: 0.25rem;
+  }
+
+  .map-sidebar-title span:last-child {
+    font-size: 0.9rem;
+  }
+
+  .map-badge {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.45rem;
+  }
+
+  .drawer-image-wrap {
+    height: 115px;
+  }
+}

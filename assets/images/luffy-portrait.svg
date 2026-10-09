@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" width="100%" height="100%">
+  <defs>
+    <!-- Background Circle Gradients -->
+    <radialGradient id="luffyBgGrad" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FFEAA7" />
+      <stop offset="65%" stop-color="#FDCB6E" />
+      <stop offset="100%" stop-color="#E17055" />
+    </radialGradient>
+    <radialGradient id="strawHatTop" cx="45%" cy="30%" r="65%">
+      <stop offset="0%" stop-color="#FFE066" />
+      <stop offset="60%" stop-color="#F5B041" />
+      <stop offset="100%" stop-color="#D68910" />
+    </radialGradient>
+    <linearGradient id="strawRibbon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C0392B" />
+      <stop offset="50%" stop-color="#E74C3C" />
+      <stop offset="100%" stop-color="#922B21" />
+    </linearGradient>
+    <linearGradient id="luffySkin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE0BD" />
+      <stop offset="100%" stop-color="#F5CBA7" />
+    </linearGradient>
+    <linearGradient id="luffyVest" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E74C3C" />
+      <stop offset="70%" stop-color="#C0392B" />
+      <stop offset="100%" stop-color="#7B241C" />
+    </linearGradient>
+    <filter id="luffyShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#1E1E1E" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Porthole Outer Brass Rim -->
+  <circle cx="140" cy="140" r="134" fill="#2B1810" stroke="#D4AF37" stroke-width="5" />
+  <circle cx="140" cy="140" r="126" fill="url(#luffyBgGrad)" />
+
+  <!-- Sunburst Spokes in Background -->
+  <g opacity="0.15" stroke="#FFF" stroke-width="3">
+    <line x1="140" y1="14" x2="140" y2="266" />
+    <line x1="14" y1="140" x2="266" y2="140" />
+    <line x1="51" y1="51" x2="229" y2="229" />
+    <line x1="229" y1="51" x2="51" y2="229" />
+  </g>
+
+  <!-- Character Group with Shadow -->
+  <g filter="url(#luffyShadow)">
+    <!-- Red Vest & Shoulders -->
+    <path d="M70 248 C75 220, 100 205, 120 208 L140 220 L160 208 C180 205, 205 220, 210 248 C212 258, 208 266, 200 266 L80 266 C72 266, 68 258, 70 248 Z" fill="url(#luffyVest)" stroke="#78281F" stroke-width="2.5" />
+    <!-- Chest / Neck -->
+    <path d="M120 185 L120 216 C120 226, 160 226, 160 216 L160 185 Z" fill="url(#luffySkin)" stroke="#D5A575" stroke-width="1.5" />
+    <path d="M125 210 Q140 224 155 210" stroke="#C39B6D" stroke-width="2" fill="none" />
+    <!-- Yellow Vest Button -->
+    <circle cx="126" cy="235" r="4" fill="#F1C40F" stroke="#B7950B" stroke-width="1.5" />
+
+    <!-- Spiky Black Hair (Back Layers) -->
+    <path d="M85 130 C75 145, 78 168, 88 180 C93 175, 96 160, 95 150 Z" fill="#1C1C1C" />
+    <path d="M195 130 C205 145, 202 168, 192 180 C187 175, 184 160, 185 150 Z" fill="#1C1C1C" />
+
+    <!-- Luffy Face Base -->
+    <path d="M96 135 C96 105, 184 105, 184 135 C184 175, 165 200, 140 202 C115 200, 96 175, 96 135 Z" fill="url(#luffySkin)" stroke="#D5A575" stroke-width="2" />
+
+    <!-- Ears -->
+    <ellipse cx="94" cy="148" rx="7" ry="12" fill="url(#luffySkin)" stroke="#D5A575" stroke-width="1.5" />
+    <ellipse cx="186" cy="148" rx="7" ry="12" fill="url(#luffySkin)" stroke="#D5A575" stroke-width="1.5" />
+
+    <!-- Spiky Black Bangs / Front Hair -->
+    <path d="M102 118 L112 135 L120 118 L132 138 L140 116 L148 138 L160 118 L168 135 L178 118 L170 110 C150 102, 130 102, 110 110 Z" fill="#1A1A1A" />
+
+    <!-- Left Eye Scar (Iconic 2 Stitches Under Left Eye) -->
+    <!-- Note: Viewer's left is Luffy's right; Luffy's left eye is on viewer's right side -->
+    <path d="M152 153 Q162 155 170 153" stroke="#8C2D19" stroke-width="2" stroke-linecap="round" fill="none" />
+    <line x1="156" y1="150" x2="157" y2="156" stroke="#8C2D19" stroke-width="1.5" stroke-linecap="round" />
+    <line x1="165" y1="150" x2="166" y2="156" stroke="#8C2D19" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Eyebrows (Determined & Expressive) -->
+    <path d="M112 132 Q122 128 130 134" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M150 134 Q158 128 168 132" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round" fill="none" />
+
+    <!-- Big Animated Eyes -->
+    <!-- Right Eye (Viewer's Left) -->
+    <ellipse cx="122" cy="140" rx="7" ry="9" fill="#1A1A1A" />
+    <circle cx="120" cy="138" r="2.5" fill="#FFF" />
+    <!-- Left Eye (Viewer's Right) -->
+    <ellipse cx="158" cy="140" rx="7" ry="9" fill="#1A1A1A" />
+    <circle cx="156" cy="138" r="2.5" fill="#FFF" />
+
+    <!-- Small Pointy Nose -->
+    <path d="M139 146 L143 151 L138 152" stroke="#B87B44" stroke-width="1.8" stroke-linejoin="round" fill="none" />
+
+    <!-- Iconic Giant Luffy Grin (Open Smile) -->
+    <path d="M112 163 Q140 162 168 163 C168 184, 112 184, 112 163 Z" fill="#78281F" stroke="#1A1A1A" stroke-width="2.2" />
+    <!-- Teeth Row -->
+    <path d="M114 164 Q140 164 166 164 C164 172, 116 172, 114 164 Z" fill="#FFFFFF" stroke="#D5D8DC" stroke-width="0.8" />
+    <line x1="128" y1="164" x2="128" y2="171" stroke="#BDC3C7" stroke-width="1" />
+    <line x1="140" y1="164" x2="140" y2="172" stroke="#BDC3C7" stroke-width="1" />
+    <line x1="152" y1="164" x2="152" y2="171" stroke="#BDC3C7" stroke-width="1" />
+    <!-- Tongue -->
+    <path d="M128 179 Q140 172 152 179 Q140 183 128 179 Z" fill="#E74C3C" />
+
+    <!-- Cheerful Cheek Blushes -->
+    <ellipse cx="106" cy="155" rx="5" ry="3" fill="#E74C3C" opacity="0.35" />
+    <ellipse cx="174" cy="155" rx="5" ry="3" fill="#E74C3C" opacity="0.35" />
+
+    <!-- ==============================================================
+         STRAW HAT (ICONIC ONE PIECE CROWN)
+         ============================================================== -->
+    <!-- Straw Hat Crown / Dome -->
+    <path d="M92 110 C92 50, 188 50, 188 110 Z" fill="url(#strawHatTop)" stroke="#B7950B" stroke-width="2.5" />
+    <!-- Straw Hat Texture Lines -->
+    <path d="M106 90 Q140 82 174 90" stroke="#D4AC0D" stroke-width="1.5" stroke-dasharray="3,2" fill="none" opacity="0.7" />
+    <path d="M118 72 Q140 66 162 72" stroke="#D4AC0D" stroke-width="1.5" stroke-dasharray="3,2" fill="none" opacity="0.7" />
+
+    <!-- Red Ribbon Band -->
+    <path d="M92 102 Q140 98 188 102 L188 111 Q140 107 92 111 Z" fill="url(#strawRibbon)" stroke="#78281F" stroke-width="1.5" />
+
+    <!-- Straw Hat Wide Curved Brim -->
+    <path d="M42 112 C75 96, 205 96, 238 112 C246 116, 240 125, 226 126 C190 128, 90 128, 54 126 C40 125, 34 116, 42 112 Z" fill="url(#strawHatTop)" stroke="#B7950B" stroke-width="3" />
+    <!-- Brim underside curve -->
+    <path d="M56 122 Q140 114 224 122" stroke="#7D6608" stroke-width="1.5" fill="none" opacity="0.6" />
+    <!-- Hat String Loop hanging on chest -->
+    <path d="M82 120 Q65 170 120 200" stroke="#E59866" stroke-width="2.5" stroke-dasharray="4,2" fill="none" />
+  </g>
+
+  <!-- Porthole Decorative Brass Bolts -->
+  <circle cx="140" cy="12" r="3.5" fill="#FFEAA7" stroke="#7D6608" stroke-width="1.2" />
+  <circle cx="140" cy="268" r="3.5" fill="#FFEAA7" stroke="#7D6608" stroke-width="1.2" />
+  <circle cx="12" cy="140" r="3.5" fill="#FFEAA7" stroke="#7D6608" stroke-width="1.2" />
+  <circle cx="268" cy="140" r="3.5" fill="#FFEAA7" stroke="#7D6608" stroke-width="1.2" />
+  <circle cx="49" cy="49" r="3" fill="#FFEAA7" stroke="#7D6608" stroke-width="1" />
+  <circle cx="231" cy="49" r="3" fill="#FFEAA7" stroke="#7D6608" stroke-width="1" />
+  <circle cx="49" cy="231" r="3" fill="#FFEAA7" stroke="#7D6608" stroke-width="1" />
+  <circle cx="231" cy="231" r="3" fill="#FFEAA7" stroke="#7D6608" stroke-width="1" />
+</svg>

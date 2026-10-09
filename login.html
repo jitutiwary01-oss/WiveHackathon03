@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Straw Hat Fleet Portal (Sign In / Sign Out) | IIT (ISM) Dhanbad</title>
+  <meta name="description" content="Sign in or enlist in the Straw Hat Crew at IIT (ISM) Dhanbad. Access admission tracking, student logbooks, and academic division assignments.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/iitism-logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Pirate Utility Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span class="pirate-log-badge">&#9875; Centenary Voyage (1926–2026)</span>
+        <span style="opacity: 0.6;">|</span>
+        <span style="font-weight: 500;">Straw Hat Fleet Crew Command Station</span>
+      </div>
+      <ul class="top-bar-links">
+        <li><a href="https://mis.iitism.ac.in/" target="_blank" rel="noopener noreferrer">MIS Logbook</a></li>
+        <li><a href="https://library.iitism.ac.in/" target="_blank" rel="noopener noreferrer">Library Archives</a></li>
+        <li><a href="map.html">Grand Line Map</a></li>
+        <li><a href="login.html" id="topBarAuthLink" style="color: var(--pirate-gold-bright); font-weight: 700;">&#9760; Crew Sign In</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-emblem-group">
+          <img src="assets/images/iitism-logo.svg" alt="IIT (ISM) Dhanbad Emblem" class="brand-logo-img">
+          <!-- Subtle Straw Hat Accent on Emblem -->
+          <svg class="brand-jolly-hat" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="65" rx="45" ry="15" fill="#E6B422" stroke="#8C6B10" stroke-width="3"/>
+            <path d="M22 62C22 38 35 25 50 25C65 25 78 38 78 62" fill="#E6B422" stroke="#8C6B10" stroke-width="3"/>
+            <path d="M22 55C32 58 68 58 78 55V62C68 65 32 65 22 62Z" fill="#D9251D"/>
+          </svg>
+          <!-- Waving Luffy Black Flag in Header Brand -->
+          <img src="assets/images/luffy-black-flag.svg" alt="Luffy Straw Hat Black Flag" class="luffy-black-flag-mini" style="margin-left: 0.35rem;">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">IIT (ISM) DHANBAD</span>
+          <span class="brand-subtitle">&#9875; CENTENARY STRAW HAT FLEET • 1926–2026</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">⚓ Helm</a></li>
+          <li><a href="about.html" class="nav-link">📜 100-Yr Log</a></li>
+          <li><a href="academics.html" class="nav-link">⚔️ 17 Divisions</a></li>
+          <li><a href="campus.html" class="nav-link">🏝️ Campus</a></li>
+          <li><a href="map.html" class="nav-link">🗺️ Treasure Map</a></li>
+          <li><a href="research.html" class="nav-link">🔬 Research Labs</a></li>
+          <li><a href="faculty.html" class="nav-link">⭐ Faculty</a></li>
+          <li><a href="admissions.html" class="nav-link">🎖️ Admissions</a></li>
+          <li><a href="contact.html" class="nav-link">🐚 Contact</a></li>
+        </ul>
+        <div class="header-auth-slot header-auth-group">
+          <!-- Populated by js/auth.js -->
+          <a href="login.html" class="btn btn-gold btn-sm header-auth-btn active">&#9760; Sign In</a>
+        </div>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Shipwreck Timber Divider -->
+  <div class="shipwreck-timber-divider" aria-hidden="true">
+    <div class="timber-metal-bolt"></div>
+    <div class="timber-rope-knot"></div>
+    <div class="timber-helm-center">&#9760;</div>
+    <div class="timber-rope-knot"></div>
+    <div class="timber-metal-bolt"></div>
+  </div>
+
+  <main style="padding: 3rem 0; min-height: 75vh;">
+    <div class="container" style="text-align: center;">
+      <!-- Prominent Waving Luffy Black Flag -->
+      <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 1.5rem; gap: 1rem;">
+        <img src="assets/images/luffy-black-flag.svg" alt="Straw Hat Black Pirate Flag" class="luffy-black-flag-hero">
+      </div>
+
+      <span class="wax-seal-badge" style="margin-bottom: 0.75rem;">&#9760; STRAW HAT PIRATE GUILD</span>
+      <h1 style="color: var(--ocean-navy); font-size: 2.3rem; margin-bottom: 0.5rem;">Crew Sign In &amp; Enlistment Portal</h1>
+      <p style="color: var(--charcoal-muted); max-width: 680px; margin: 0 auto 2.5rem auto; font-size: 1.05rem;">
+        <strong>Captain Luffy roars:</strong> <em>“Oi! Whether you're an incoming recruit or a veteran commander of the 17 fleets, sign in here to check your crew bounties and research logbooks!”</em>
+      </p>
+
+      <!-- Main Crew Auth Wrapper -->
+      <div id="crewAuthPageWrapper" class="crew-auth-container">
+        
+        <!-- ==============================================================
+             LOGGED IN VIEW (Active Crew Member)
+             ============================================================== -->
+        <div id="crewLoggedInView" style="display: none;">
+          <div class="crew-auth-card">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+              <span class="verified-stamp" style="font-size: 0.85rem; padding: 0.35rem 0.9rem;">
+                &#10003; ACTIVE STRAW HAT VOYAGER
+              </span>
+              <h2 style="color: var(--ocean-navy); margin-top: 0.75rem; font-size: 1.8rem;">
+                Welcome Aboard, <span id="cardCrewName" style="color: var(--crimson-rust);">Crewmate</span>!
+              </h2>
+            </div>
+
+            <!-- Identity Card -->
+            <div class="crew-id-card">
+              <div class="crew-id-header">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <span id="cardCrewAvatar" style="font-size: 2rem;">👒</span>
+                  <div>
+                    <h3 id="cardCrewRole" style="margin: 0; color: var(--pirate-gold-bright); font-size: 1.15rem;">Fleet Navigator</h3>
+                    <span style="font-size: 0.8rem; color: #CAD5DD;">IIT (ISM) Dhanbad Fleet</span>
+                  </div>
+                </div>
+                <img src="assets/images/luffy-black-flag.svg" alt="Luffy Black Flag" class="luffy-black-flag-mini">
+              </div>
+
+              <div class="crew-id-field">
+                <span class="crew-id-label">Assigned Fleet Division:</span>
+                <span id="cardCrewDivision" class="crew-id-val">Computer Science &amp; Engineering</span>
+              </div>
+              <div class="crew-id-field">
+                <span class="crew-id-label">Active Grand Line Bounty:</span>
+                <span id="cardCrewBounty" class="crew-id-val" style="color: #2ED573;">฿ 3,000,000,000</span>
+              </div>
+              <div class="crew-id-field">
+                <span class="crew-id-label">Fleet Enlistment ID:</span>
+                <span id="cardCrewId" class="crew-id-val">ISM-1926-7788</span>
+              </div>
+              <div class="crew-id-field">
+                <span class="crew-id-label">Centenary Clearance:</span>
+                <span class="crew-id-val">Granted (1926–2026)</span>
+              </div>
+            </div>
+
+            <!-- Fast Action Buttons -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+              <a href="map.html" class="btn btn-gold btn-sm">&#128506; 2D Island Map</a>
+              <a href="academics.html" class="btn btn-outline btn-sm">&#9876; 17 Divisions</a>
+              <a href="admissions.html" class="btn btn-outline btn-sm">&#128220; Admission Status</a>
+              <a href="campus.html" class="btn btn-outline btn-sm">&#127963; Campus Facilities</a>
+            </div>
+
+            <button type="button" id="btnPageSignOut" class="btn btn-rust" style="width: 100%; font-size: 1.05rem; padding: 0.85rem;">
+              &#9760; Sign Out of Straw Hat Fleet
+            </button>
+          </div>
+        </div>
+
+        <!-- ==============================================================
+             LOGGED OUT VIEW (Sign In / Enlist Form)
+             ============================================================== -->
+        <div id="crewLoggedOutView">
+          <div class="crew-auth-card">
+            <!-- Firebase Connection Status Badge -->
+            <div id="firebaseStatusIndicator" style="margin-bottom: 1rem; font-size: 0.88rem; font-weight: 700; text-align: center;"></div>
+
+            <!-- Google Sign-In with Firebase -->
+            <button type="button" class="btn btn-outline" onclick="signInWithGoogle()" style="width: 100%; margin-bottom: 1.15rem; border-color: #4285F4; color: #1A73E8; font-weight: 700; background: #FFF; box-shadow: 0 2px 6px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; gap: 0.6rem;">
+              <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.874 2.684-6.616z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.258c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332C2.438 15.983 5.482 18 9 18z"/><path fill="#FBBC05" d="M3.964 10.707c-.18-.54-.282-1.117-.282-1.707s.102-1.167.282-1.707V4.961H.957C.347 6.175 0 7.55 0 9s.347 2.825.957 4.039l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0 5.482 0 2.438 2.017.957 4.961L3.964 7.293C4.672 5.166 6.656 3.58 9 3.58z"/></svg>
+              Sign In with Google (Firebase)
+            </button>
+
+            <div style="display: flex; align-items: center; text-align: center; margin: 0.75rem 0 1.25rem 0; color: #8C7B65; font-size: 0.78rem; font-weight: 700;">
+              <span style="flex: 1; border-bottom: 1px solid #D5C4A1;"></span>
+              <span style="padding: 0 0.75rem;">OR USE PIRATE CIPHER</span>
+              <span style="flex: 1; border-bottom: 1px solid #D5C4A1;"></span>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="crew-tab-nav">
+              <button type="button" id="tabBtnSignIn" class="crew-tab-btn active">
+                &#9760; Sign In to Fleet
+              </button>
+              <button type="button" id="tabBtnSignUp" class="crew-tab-btn">
+                &#9875; Enlist (New Admission)
+              </button>
+            </div>
+
+            <!-- Sign In Form -->
+            <form id="formCrewSignIn">
+              <div class="crew-form-group">
+                <label class="crew-form-label" for="inputSignInName">Fleet Codename / Candidate Name</label>
+                <input type="text" id="inputSignInName" class="crew-form-input" placeholder="e.g. Monkey D. Luffy or your name" required>
+              </div>
+
+              <div class="crew-form-group">
+                <label class="crew-form-label" for="inputSignInPass">Secret Pirate Cipher (Password)</label>
+                <input type="password" id="inputSignInPass" class="crew-form-input" placeholder="Enter your secret cipher..." required value="onepiece2026">
+              </div>
+
+              <div class="crew-form-group">
+                <label class="crew-form-label" for="selectSignInDept">Fleet Division (Academic Discipline)</label>
+                <select id="selectSignInDept" class="crew-form-select">
+                  <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+                  <option value="Mining Engineering">Mining Engineering</option>
+                  <option value="Petroleum Engineering">Petroleum Engineering</option>
+                  <option value="Electronics & Communication">Electronics &amp; Communication</option>
+                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Electrical Engineering">Electrical Engineering</option>
+                  <option value="Materials & Metallurgical Engg">Materials &amp; Metallurgical Engg</option>
+                  <option value="Applied Geology & Geophysics">Applied Geology &amp; Geophysics</option>
+                  <option value="Management Studies (MBA)">Management Studies (MBA)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-rust" style="width: 100%; font-size: 1.05rem; padding: 0.85rem; margin-top: 0.5rem;">
+                &#9760; Sign In as Crewmate
+              </button>
+            </form>
+
+            <!-- Enlist (Sign Up) Form -->
+            <form id="formCrewSignUp" style="display: none;">
+              <div class="crew-form-group">
+                <label class="crew-form-label" for="inputSignUpName">New Candidate Full Name</label>
+                <input type="text" id="inputSignUpName" class="crew-form-input" placeholder="Enter your full name...">
+              </div>
+
+              <div class="crew-form-group">
+                <label class="crew-form-label" for="inputSignUpRoll">Application / JEE Adv Roll Number</label>
+                <input type="text" id="inputSignUpRoll" class="crew-form-input" placeholder="e.g. 26JE001234">
+              </div>
+
+              <div class="crew-form-group">
+                <label class="crew-form-label" for="selectSignUpDept">Preferred Fleet Division</label>
+                <select id="selectSignUpDept" class="crew-form-select">
+                  <option value="Computer Science & Engineering">Computer Science &amp; Engineering</option>
+                  <option value="Mining Engineering">Mining Engineering</option>
+                  <option value="Petroleum Engineering">Petroleum Engineering</option>
+                  <option value="Mechanical Engineering">Mechanical Engineering</option>
+                  <option value="Electrical Engineering">Electrical Engineering</option>
+                  <option value="Chemical Engineering">Chemical Engineering</option>
+                  <option value="Civil Engineering">Civil Engineering</option>
+                  <option value="Applied Geophysics">Applied Geophysics</option>
+                </select>
+              </div>
+
+              <div class="crew-form-group">
+                <label class="crew-form-label" for="inputSignUpPass">Create Secret Cipher</label>
+                <input type="password" id="inputSignUpPass" class="crew-form-input" placeholder="Choose a password...">
+              </div>
+
+              <button type="submit" class="btn btn-gold" style="width: 100%; font-size: 1.05rem; padding: 0.85rem; margin-top: 0.5rem;">
+                &#9875; Enlist in Straw Hat Fleet 2026
+              </button>
+            </form>
+
+            <!-- Quick Demo One-Click Logins -->
+            <div class="quick-signin-box">
+              <span class="quick-signin-title">&#9760; Quick One-Click Demo Sign In</span>
+              <div class="quick-signin-pills">
+                <button type="button" class="quick-signin-pill" onclick="demoSignIn('luffy')">
+                  <img src="assets/images/luffy-portrait.svg" alt="Luffy" style="width: 20px; height: 20px; border-radius: 50%; vertical-align: middle; margin-right: 4px;">
+                  Sign In as Luffy (฿ 3B)
+                </button>
+                <button type="button" class="quick-signin-pill" onclick="demoSignIn('zoro')">
+                  <img src="assets/images/zoro-portrait.svg" alt="Zoro" style="width: 20px; height: 20px; border-radius: 50%; vertical-align: middle; margin-right: 4px;">
+                  Sign In as Zoro (฿ 1.11B)
+                </button>
+                <button type="button" class="quick-signin-pill" onclick="demoSignIn('scholar')">
+                  📜 Sign In as Scholar (฿ 50M)
+                </button>
+              </div>
+            </div>
+
+            <!-- Firebase Setup Assistant Box -->
+            <div class="firebase-assistant-box" style="margin-top: 1.5rem; background: #FAF5E8; border: 2px dashed #C4A77D; border-radius: var(--radius-xs); padding: 1.25rem; text-align: left;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                <h5 style="margin: 0; color: var(--ocean-navy); font-size: 0.95rem;">🔥 Firebase Project Connection</h5>
+                <span class="wax-seal-badge" style="font-size: 0.68rem; padding: 0.2rem 0.5rem;">CLOUD SYNC</span>
+              </div>
+              <p style="font-size: 0.82rem; color: #554E45; margin-bottom: 0.65rem;">
+                Firebase Console se apna <code>firebaseConfig</code> object yahan paste karein ya chat me de dein:
+              </p>
+              <textarea id="customFirebaseConfigTextarea" placeholder='{\n  "apiKey": "AIzaSy...",\n  "authDomain": "your-project.firebaseapp.com",\n  "projectId": "your-project-id",\n  "storageBucket": "your-project.appspot.com",\n  "messagingSenderId": "...",\n  "appId": "..."\n}' style="width: 100%; height: 85px; font-family: monospace; font-size: 0.78rem; padding: 0.5rem; border: 1.5px solid #C4A77D; border-radius: 4px; resize: vertical; margin-bottom: 0.5rem; background: #FFFDF8; box-sizing: border-box;"></textarea>
+              <div style="display: flex; justify-content: flex-end;">
+                <button type="button" class="btn btn-gold btn-sm" onclick="saveCustomFirebaseConfig()">
+                  💾 Save &amp; Connect Firebase
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Shipwreck Timber Divider -->
+  <div class="shipwreck-timber-divider" aria-hidden="true">
+    <div class="timber-metal-bolt"></div>
+    <div class="timber-rope-knot"></div>
+    <div class="timber-helm-center">&#9875;</div>
+    <div class="timber-rope-knot"></div>
+    <div class="timber-metal-bolt"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+          <img src="assets/images/iitism-logo.svg" alt="IIT ISM Logo" style="width: 42px; height: 42px;">
+          <img src="assets/images/luffy-black-flag.svg" alt="Luffy Black Flag" class="luffy-black-flag-mini">
+          <h5 style="margin: 0; padding: 0;">IIT (ISM) DHANBAD</h5>
+        </div>
+        <p style="font-size: 0.88rem; color: #CBD7DE;">
+          Indian Institute of Technology (Indian School of Mines)<br>
+          Dhanbad, Jharkhand, India — 826004
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Captain's Log</h5>
+        <ul class="footer-links">
+          <li><a href="about.html">The 100-Year Voyage</a></li>
+          <li><a href="academics.html">17 Battle Divisions</a></li>
+          <li><a href="research.html">Secret Science Labs</a></li>
+          <li><a href="faculty.html">Faculty Commanders</a></li>
+          <li><a href="admissions.html">Join the Straw Hat Crew</a></li>
+          <li><a href="map.html">2D Treasure Map</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Crew Gateway</h5>
+        <ul class="footer-links">
+          <li><a href="login.html">Crew Sign In / Sign Out</a></li>
+          <li><a href="admissions.html">Admissions Trials 2026</a></li>
+          <li><a href="https://library.iitism.ac.in/" target="_blank" rel="noopener noreferrer">Library Archives</a></li>
+          <li><a href="https://mis.iitism.ac.in/" target="_blank" rel="noopener noreferrer">MIS Logbook</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Transponder Snail</h5>
+        <div class="footer-contact-item">
+          <span>&#9993;</span>
+          <span>admissions@iitism.ac.in</span>
+        </div>
+        <div class="footer-contact-item">
+          <span>&#9742;</span>
+          <span>+91-326-2235001</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div>&copy; 2026 Indian Institute of Technology (Indian School of Mines) Dhanbad.</div>
+        <div><a href="ASSET_MANIFEST.md" target="_blank">Asset Attribution</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK Compatibility Scripts -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

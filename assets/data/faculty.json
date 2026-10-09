@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Prof. Sukumar Mishra",
+    "designation": "Director & Professor",
+    "department": "Electrical Engineering",
+    "research": "Smart Grid, Microgrids, Renewable Energy Systems, Electric Vehicles",
+    "qualifications": "Ph.D., Fellow INAE, Fellow IEEE, Fellow IET",
+    "officialUrl": "https://www.iitism.ac.in/director"
+  },
+  {
+    "name": "Prof. Dheeraj Kumar",
+    "designation": "Deputy Director & Professor",
+    "department": "Mining Engineering",
+    "research": "Mine Planning & Design, Clean Coal Technologies, Underground Mining Mechanization",
+    "qualifications": "Ph.D., IIT (ISM) Dhanbad",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  },
+  {
+    "name": "Prof. Chiranjeev Kumar",
+    "designation": "Professor",
+    "department": "Computer Science & Engineering",
+    "research": "Software Engineering, Wireless Sensor Networks, Deep Learning, Cloud Computing",
+    "qualifications": "Ph.D., Computer Science & Engineering",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  },
+  {
+    "name": "Prof. Sumanta K. Sahu",
+    "designation": "Associate Professor & Lab In-Charge",
+    "department": "Chemical Engineering",
+    "research": "Cell Culture, Nanomaterials, Drug Delivery, Bio-separation Processes",
+    "qualifications": "Ph.D., Faculty-in-Charge CRF Cell Culture Lab",
+    "officialUrl": "https://people.iitism.ac.in/~research/crf/CellCultureLab.php"
+  },
+  {
+    "name": "Dr. Vivek Bajpai",
+    "designation": "Associate Professor",
+    "department": "Mechanical Engineering",
+    "research": "Micro-fabrication, Micro-machining, Burr Minimization in Titanium & Nickel Superalloys",
+    "qualifications": "Ph.D., IIT Bombay",
+    "officialUrl": "https://people.iitism.ac.in/~vivek/lab.html"
+  },
+  {
+    "name": "Prof. Vikas Mahto",
+    "designation": "Professor",
+    "department": "Petroleum Engineering",
+    "research": "Enhanced Oil Recovery, Drilling Fluids, Unconventional Hydrocarbons",
+    "qualifications": "Ph.D., Petroleum Engineering",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  },
+  {
+    "name": "Prof. Saumya Singh",
+    "designation": "Professor & Head",
+    "department": "Management Studies & Industrial Engineering",
+    "research": "Marketing Management, Consumer Behaviour, Sustainable Operations",
+    "qualifications": "Ph.D., Management",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  },
+  {
+    "name": "Prof. Sagar Pal",
+    "designation": "Professor",
+    "department": "Chemistry & Chemical Biology",
+    "research": "Polymer Science, Bio-nanotechnology, Hydrogels, Water Purification",
+    "qualifications": "Ph.D., Polymer Science",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  },
+  {
+    "name": "Prof. Bobby Antony",
+    "designation": "Professor",
+    "department": "Physics",
+    "research": "Atomic and Molecular Physics, Electron Scattering, Plasma Physics",
+    "qualifications": "Ph.D., Atomic Physics",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  },
+  {
+    "name": "Prof. Sanjeev Anand Sahu",
+    "designation": "Dean (Academic) & Professor",
+    "department": "Mathematics & Computing",
+    "research": "Wave Propagation, Solid Mechanics, Mathematical Modeling",
+    "qualifications": "Ph.D., Applied Mathematics",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  },
+  {
+    "name": "Prof. V. M. S. R. Murthy",
+    "designation": "Professor",
+    "department": "Mining Engineering",
+    "research": "Rock Mechanics, Tunnelling, Advanced Surface Mine Planning",
+    "qualifications": "Ph.D., Mining Engineering",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  },
+  {
+    "name": "Prof. B. C. Sarkar",
+    "designation": "Professor (HAG)",
+    "department": "Applied Geology",
+    "research": "Geostatistics, Mineral Resource Estimation, Mining Geology",
+    "qualifications": "Ph.D., Imperial College London",
+    "officialUrl": "https://people.iitism.ac.in/~faculty/"
+  }
+]

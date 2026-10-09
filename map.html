@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D Grand Line Treasure Map | IIT (ISM) Dhanbad</title>
+  <meta name="description" content="Geographically accurate 2D campus map and territory directory for IIT (ISM) Dhanbad: Academic complexes, secret laboratories, hostels, and sports grounds.">
+  
+  <link rel="icon" type="image/svg+xml" href="assets/images/iitism-logo.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/map.css">
+
+  <!-- Leaflet.js Mapping Engine (Local Vendor Bundle with CDN Fallback) -->
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+  <script src="assets/vendor/leaflet/leaflet.js"></script>
+</head>
+<body>
+
+  <!-- Top Pirate Utility Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span class="pirate-log-badge">&#9875; Centenary Voyage (1926–2026)</span>
+        <span style="opacity: 0.6;">|</span>
+        <span style="font-weight: 500;">Navigator's Chart • GPS: 23.8144° N, 86.4412° E</span>
+      </div>
+      <ul class="top-bar-links">
+        <li><a href="campus.html">Island Territory</a></li>
+        <li><a href="login.html" id="topBarAuthLink" style="color: var(--pirate-gold-bright); font-weight: 700;">&#9760; Crew Sign In</a></li>
+        <li><a href="contact.html">Transponder Snail</a></li>
+        <li><a href="ASSET_MANIFEST.md" target="_blank">Asset Attribution</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-emblem-group">
+          <img src="assets/images/iitism-logo.svg" alt="IIT (ISM) Dhanbad Emblem" class="brand-logo-img">
+          <svg class="brand-jolly-hat" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="65" rx="45" ry="15" fill="#E6B422" stroke="#8C6B10" stroke-width="3"/>
+            <path d="M22 62C22 38 35 25 50 25C65 25 78 38 78 62" fill="#E6B422" stroke="#8C6B10" stroke-width="3"/>
+            <path d="M22 55C32 58 68 58 78 55V62C68 65 32 65 22 62Z" fill="#D9251D"/>
+          </svg>
+          <img src="assets/images/luffy-black-flag.svg" alt="Luffy Straw Hat Black Flag" class="luffy-black-flag-mini" style="margin-left: 0.35rem;">
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">IIT (ISM) DHANBAD</span>
+          <span class="brand-subtitle">&#9875; CENTENARY STRAW HAT FLEET • 1926–2026</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">⚓ Helm</a></li>
+          <li><a href="about.html" class="nav-link">📜 100-Yr Log</a></li>
+          <li><a href="academics.html" class="nav-link">⚔️ 17 Divisions</a></li>
+          <li><a href="campus.html" class="nav-link">🏝️ Campus</a></li>
+          <li><a href="map.html" class="nav-link active">🗺️ Treasure Map</a></li>
+          <li><a href="research.html" class="nav-link">🔬 Research Labs</a></li>
+          <li><a href="faculty.html" class="nav-link">⭐ Faculty</a></li>
+          <li><a href="admissions.html" class="nav-link">🎖️ Admissions</a></li>
+          <li><a href="contact.html" class="nav-link">🐚 Contact</a></li>
+        </ul>
+        <div class="header-auth-slot header-auth-group">
+          <a href="login.html" class="btn btn-gold btn-sm header-auth-btn">&#9760; Sign In</a>
+        </div>
+      </nav>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Shipwreck Timber Divider -->
+    <div class="shipwreck-timber-divider" aria-hidden="true">
+      <div class="timber-metal-bolt"></div>
+      <div class="timber-rope-knot"></div>
+      <div class="timber-helm-center">&#9875;</div>
+      <div class="timber-rope-knot"></div>
+      <div class="timber-metal-bolt"></div>
+    </div>
+
+    <div class="map-page-wrapper">
+      <!-- Left Sidebar: Directory & Filters -->
+      <aside class="map-sidebar">
+        <div class="map-sidebar-header">
+          <div class="map-sidebar-title" style="align-items: center;">
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <img src="assets/images/luffy-black-flag.svg" alt="Luffy Flag" class="luffy-black-flag-mini" style="width: 24px; height: 18px;">
+              <span style="font-family: var(--font-heading); font-weight: 800; color: var(--ocean-navy);">&#9875; Island Chart</span>
+            </div>
+            <span id="placeCountDisplay" class="map-badge" style="background: var(--crimson-rust);">14 Landmarks</span>
+          </div>
+          <p class="map-sidebar-subtitle">Search or select verified landmarks across the 393-acre territory.</p>
+
+          <div class="map-search-bar">
+            <span class="map-search-icon">&#128269;</span>
+            <input type="text" id="mapSearchInput" class="map-search-input" placeholder="Search by building, hostel, lab...">
+          </div>
+
+          <div class="map-category-pills">
+            <button class="map-category-pill active" data-cat="all">All</button>
+            <button class="map-category-pill" data-cat="academic">Academic</button>
+            <button class="map-category-pill" data-cat="research">Secret Labs</button>
+            <button class="map-category-pill" data-cat="hostel">Hostels</button>
+            <button class="map-category-pill" data-cat="administrative">Admin</button>
+            <button class="map-category-pill" data-cat="sports">Sports</button>
+          </div>
+        </div>
+
+        <ul id="mapDirectoryList" class="map-directory-list">
+          <!-- Populated by js/map.js -->
+        </ul>
+      </aside>
+
+      <!-- Right Main Canvas -->
+      <section class="map-canvas-container" aria-label="Interactive Map View">
+        <!-- Map View Mode Switcher -->
+        <div class="map-mode-toolbar">
+          <div class="map-mode-buttons" role="tablist" aria-label="Map Mode Selector">
+            <button id="mapModeInteractive" class="map-mode-btn active" role="tab" aria-selected="true" title="2D Landmark Navigator">
+              <span>🗺️</span> 2D Campus Navigator
+            </button>
+            <button id="mapModeGoogle" class="map-mode-btn" role="tab" aria-selected="false" title="Official Google Maps View">
+              <span>📍</span> Google Maps Live View
+            </button>
+          </div>
+          <span class="map-mode-status" id="mapModeStatus">393-Acre Campus • GPS: 23.8144° N, 86.4412° E</span>
+        </div>
+
+        <div id="campusMap"></div>
+
+        <!-- Google Maps Live Embed View -->
+        <div id="googleMapsView" class="google-maps-view" style="display: none;">
+          <iframe id="googleMapsIframe" 
+            title="IIT (ISM) Dhanbad Official Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14603.951594902128!2d86.4385108!3d23.8144078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f6bc9c5df0044d%3A0xe7bc32f99f36f6d6!2sIndian%20Institute%20of%20Technology%20(ISM)%20Dhanbad!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Mobile Drawer Backdrop Overlay -->
+        <div id="mapDrawerBackdrop" class="map-drawer-backdrop" aria-hidden="true"></div>
+
+        <!-- Detail Drawer -->
+        <div id="mapDetailDrawer" class="map-detail-drawer" role="region" aria-label="Location Details">
+          <div class="drawer-image-wrap">
+            <img id="drawerImage" src="assets/images/heritage-building.jpg" alt="Campus Landmark Photograph">
+            <button id="drawerCloseBtn" class="drawer-close-btn" aria-label="Close details panel">&times;</button>
+          </div>
+          <div class="drawer-content">
+            <span id="drawerTag" class="drawer-tag">VERIFIED FACILITY</span>
+            <h3 id="drawerTitle" class="drawer-title">Main Heritage Building</h3>
+            <p id="drawerDesc" class="drawer-desc">Description of selected facility.</p>
+            
+            <table class="drawer-meta-table">
+              <tr>
+                <td>GPS Coordinates:</td>
+                <td id="drawerCoords">23.81434° N, 86.44115° E</td>
+              </tr>
+              <tr>
+                <td>Authenticity:</td>
+                <td><span class="verified-stamp">&#10003; Real Campus Photo</span></td>
+              </tr>
+            </table>
+
+            <div class="drawer-actions">
+              <button id="drawerFocusBtn" class="btn btn-rust btn-sm" style="flex: 1;">Center on Map</button>
+              <a id="drawerLink" href="https://www.iitism.ac.in/" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" style="flex: 1;">Official Portal</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="mapFallbackBanner" class="map-fallback-banner">
+          &#9888; Note: Map tiles could not be fetched from the tile server. The campus directory and geographic coordinates remain fully accessible in the sidebar.
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/map-config.js"></script>
+  <script src="js/map.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 280" width="100%" height="100%">
+  <defs>
+    <!-- Background Circle Gradients (Emerald / Ocean Navy) -->
+    <radialGradient id="zoroBgGrad" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#A3E4D7" />
+      <stop offset="60%" stop-color="#16A085" />
+      <stop offset="100%" stop-color="#0E4B3E" />
+    </radialGradient>
+    <!-- Zoro Green Hair Gradient -->
+    <linearGradient id="zoroHairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#58D68D" />
+      <stop offset="50%" stop-color="#28B463" />
+      <stop offset="100%" stop-color="#196F3D" />
+    </linearGradient>
+    <linearGradient id="zoroSkin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAD7A0" />
+      <stop offset="100%" stop-color="#F5B041" />
+    </linearGradient>
+    <!-- Coat / Robe (Dark Pine Green) -->
+    <linearGradient id="zoroCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#145A32" />
+      <stop offset="70%" stop-color="#0E3A21" />
+      <stop offset="100%" stop-color="#071E11" />
+    </linearGradient>
+    <linearGradient id="katanaHiltGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F9E79F" />
+      <stop offset="50%" stop-color="#F1C40F" />
+      <stop offset="100%" stop-color="#B7950B" />
+    </linearGradient>
+    <filter id="zoroShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#0B2B20" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Porthole Outer Brass Rim -->
+  <circle cx="140" cy="140" r="134" fill="#1C2833" stroke="#D4AF37" stroke-width="5" />
+  <circle cx="140" cy="140" r="126" fill="url(#zoroBgGrad)" />
+
+  <!-- Diagonal Sword Slash Lines in Background -->
+  <g opacity="0.18" stroke="#FFF" stroke-width="2.5">
+    <line x1="20" y1="60" x2="260" y2="220" stroke-width="4" />
+    <line x1="40" y1="40" x2="240" y2="240" stroke-width="1.5" />
+    <line x1="10" y1="180" x2="230" y2="30" stroke-width="3" />
+  </g>
+
+  <!-- Character Group with Shadow -->
+  <g filter="url(#zoroShadow)">
+
+    <!-- Katana Hilts Peeking Behind Right Shoulder (Viewer's Left) -->
+    <!-- Wado Ichimonji (Pure White Tsuka & Golden Tsuba) -->
+    <g transform="rotate(-32 65 140)">
+      <rect x="58" y="70" width="12" height="68" rx="2" fill="#FFFFFF" stroke="#BDC3C7" stroke-width="1.5" />
+      <!-- Diamond Tsuka Wrap -->
+      <polygon points="64,76 68,82 64,88 60,82" fill="#2C3E50" />
+      <polygon points="64,92 68,98 64,104 60,98" fill="#2C3E50" />
+      <polygon points="64,108 68,114 64,120 60,114" fill="#2C3E50" />
+      <polygon points="64,124 68,130 64,136 60,130" fill="#2C3E50" />
+      <!-- Golden Kashira Pommel & Tsuba -->
+      <rect x="56" y="66" width="16" height="6" rx="2" fill="url(#katanaHiltGold)" />
+      <ellipse cx="64" cy="140" rx="14" ry="4" fill="url(#katanaHiltGold)" />
+    </g>
+
+    <!-- Sandai Kitetsu (Crimson / Red-Black) & Shusui behind -->
+    <g transform="rotate(-22 80 150)">
+      <rect x="74" y="80" width="11" height="60" rx="2" fill="#922B21" stroke="#641E16" stroke-width="1.2" />
+      <polygon points="79,88 83,94 79,100 75,94" fill="#D4AC0D" />
+      <polygon points="79,104 83,110 79,116 75,110" fill="#D4AC0D" />
+      <ellipse cx="79.5" cy="142" rx="13" ry="4" fill="url(#katanaHiltGold)" />
+    </g>
+
+    <!-- Zoro Robe / Dark Green Coat Shoulders -->
+    <path d="M65 248 C72 215, 96 195, 120 200 L140 215 L160 200 C184 195, 208 215, 215 248 C218 258, 212 266, 204 266 L76 266 C68 266, 63 258, 65 248 Z" fill="url(#zoroCoat)" stroke="#0E3A21" stroke-width="2.5" />
+    
+    <!-- Muscular Neck & Chest -->
+    <path d="M115 170 L115 212 C115 224, 165 224, 165 212 L165 170 Z" fill="url(#zoroSkin)" stroke="#BA8748" stroke-width="1.8" />
+    <!-- Clavicle / Neck tendons -->
+    <path d="M125 185 L132 210" stroke="#BA8748" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M155 185 L148 210" stroke="#BA8748" stroke-width="1.8" stroke-linecap="round" />
+    <!-- Coat Lapels -->
+    <path d="M112 198 L138 238 L140 266" stroke="#1E8449" stroke-width="2.5" fill="none" />
+    <path d="M168 198 L142 238 L140 266" stroke="#1E8449" stroke-width="2.5" fill="none" />
+
+    <!-- Zoro Face Base (Sharp, Angular Jawline) -->
+    <path d="M96 115 C96 95, 184 95, 184 115 C184 160, 168 192, 140 196 C112 192, 96 160, 96 115 Z" fill="url(#zoroSkin)" stroke="#BA8748" stroke-width="2" />
+
+    <!-- Ears -->
+    <ellipse cx="94" cy="138" rx="6" ry="11" fill="url(#zoroSkin)" stroke="#BA8748" stroke-width="1.5" />
+    <!-- Zoro's 3 Iconic Golden Pendant Earrings (On Left Ear - Viewer's Right Side) -->
+    <ellipse cx="186" cy="138" rx="6" ry="11" fill="url(#zoroSkin)" stroke="#BA8748" stroke-width="1.5" />
+    <!-- Earring 1 -->
+    <circle cx="188" cy="146" r="1.8" fill="url(#katanaHiltGold)" />
+    <path d="M188 148 L188 158" stroke="url(#katanaHiltGold)" stroke-width="2" stroke-linecap="round" />
+    <circle cx="188" cy="159" r="1.8" fill="url(#katanaHiltGold)" />
+    <!-- Earring 2 -->
+    <circle cx="191" cy="144" r="1.8" fill="url(#katanaHiltGold)" />
+    <path d="M191 146 L191 156" stroke="url(#katanaHiltGold)" stroke-width="2" stroke-linecap="round" />
+    <circle cx="191" cy="157" r="1.8" fill="url(#katanaHiltGold)" />
+    <!-- Earring 3 -->
+    <circle cx="194" cy="142" r="1.8" fill="url(#katanaHiltGold)" />
+    <path d="M194 144 L194 154" stroke="url(#katanaHiltGold)" stroke-width="2" stroke-linecap="round" />
+    <circle cx="194" cy="155" r="1.8" fill="url(#katanaHiltGold)" />
+
+    <!-- Zoro Spiky Marimo Green Hair (Cropped, Sharp Anime Tufts) -->
+    <path d="M92 110 C88 95, 94 75, 110 65 C122 58, 158 58, 170 65 C186 75, 192 95, 188 110 L184 116 L178 98 L168 112 L158 92 L146 112 L136 90 L126 112 L116 95 L104 114 L98 102 Z" fill="url(#zoroHairGrad)" stroke="#196F3D" stroke-width="2" />
+    <!-- Hair Spikes Details -->
+    <polygon points="112,66 118,52 126,65" fill="#58D68D" />
+    <polygon points="132,60 140,46 148,60" fill="#58D68D" />
+    <polygon points="154,65 162,54 168,66" fill="#58D68D" />
+    <!-- Sideburns -->
+    <polygon points="96,112 94,128 100,122" fill="#28B463" />
+    <polygon points="184,112 186,128 180,122" fill="#28B463" />
+
+    <!-- Eyebrows (Thick, Sharp, Intimidating Angle) -->
+    <!-- Right Brow (Viewer's Left) -->
+    <path d="M110 120 L130 126" stroke="#196F3D" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M109 119 L129 125" stroke="#145A32" stroke-width="3" stroke-linecap="round" />
+    <!-- Left Brow (Viewer's Right) -->
+    <path d="M150 126 L170 120" stroke="#196F3D" stroke-width="4.5" stroke-linecap="round" />
+    <path d="M151 125 L171 119" stroke="#145A32" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Right Eye (Viewer's Left): Intense, Piercing Swordsman Gaze -->
+    <path d="M112 130 Q122 126 132 132" stroke="#1C2833" stroke-width="2.5" fill="none" />
+    <path d="M114 133 Q122 138 130 133" stroke="#1C2833" stroke-width="1.8" fill="none" />
+    <circle cx="122" cy="131" r="3.8" fill="#1C2833" />
+    <circle cx="121" cy="130" r="1.2" fill="#FFF" />
+
+    <!-- Left Eye (Viewer's Right): Iconic Post-Timeskip Battle Scar (Permanently Closed) -->
+    <path d="M148 132 Q158 135 168 131" stroke="#641E16" stroke-width="2" stroke-linecap="round" fill="none" />
+    <!-- Vertical Scar Cutting Through Eyebrow & Eyelid -->
+    <line x1="158" y1="114" x2="158" y2="148" stroke="#78281F" stroke-width="2.5" stroke-linecap="round" />
+    <line x1="157" y1="116" x2="157" y2="146" stroke="#922B21" stroke-width="1.5" stroke-linecap="round" />
+
+    <!-- Strong Angular Nose -->
+    <path d="M138 128 L142 146 L134 148" stroke="#BA8748" stroke-width="2.2" stroke-linejoin="round" fill="none" />
+
+    <!-- Cocky, Confident Swordsman Smirk -->
+    <path d="M124 164 Q138 162 154 158" stroke="#1C2833" stroke-width="2.6" stroke-linecap="round" fill="none" />
+    <line x1="154" y1="158" x2="158" y2="155" stroke="#1C2833" stroke-width="2.2" stroke-linecap="round" />
+    <!-- Lower Lip Shadow -->
+    <path d="M132 170 Q140 172 148 170" stroke="#BA8748" stroke-width="1.8" fill="none" />
+
+    <!-- Bandana Tied on Left Bicep (Viewer's Right Shoulder) -->
+    <path d="M188 222 C196 226, 210 238, 206 250 L186 242 Z" fill="#1C2833" stroke="#000" stroke-width="1.5" />
+    <!-- Bandana knot ribbons hanging -->
+    <path d="M204 246 Q214 256 210 266" stroke="#1C2833" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    <path d="M202 248 Q208 260 204 268" stroke="#1C2833" stroke-width="2.8" stroke-linecap="round" fill="none" />
+  </g>
+
+  <!-- Porthole Decorative Brass Bolts -->
+  <circle cx="140" cy="12" r="3.5" fill="#FFEAA7" stroke="#7D6608" stroke-width="1.2" />
+  <circle cx="140" cy="268" r="3.5" fill="#FFEAA7" stroke="#7D6608" stroke-width="1.2" />
+  <circle cx="12" cy="140" r="3.5" fill="#FFEAA7" stroke="#7D6608" stroke-width="1.2" />
+  <circle cx="268" cy="140" r="3.5" fill="#FFEAA7" stroke="#7D6608" stroke-width="1.2" />
+  <circle cx="49" cy="49" r="3" fill="#FFEAA7" stroke="#7D6608" stroke-width="1" />
+  <circle cx="231" cy="49" r="3" fill="#FFEAA7" stroke="#7D6608" stroke-width="1" />
+  <circle cx="49" cy="231" r="3" fill="#FFEAA7" stroke="#7D6608" stroke-width="1" />
+  <circle cx="231" cy="231" r="3" fill="#FFEAA7" stroke="#7D6608" stroke-width="1" />
+</svg>

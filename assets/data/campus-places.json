@@ -1,0 +1,156 @@
+[
+  {
+    "id": "heritage-building",
+    "name": "Main Heritage Building",
+    "category": "administrative",
+    "lat": 23.81434,
+    "lng": 86.44115,
+    "image": "assets/images/heritage-building.jpg",
+    "tag": "Inaugurated 1926",
+    "description": "The monumental colonial-era building inaugurated on 9 December 1926 by Lord Irwin, then Viceroy of India. Features iconic red-brick architecture, arched corridors, and houses the offices of the Director, Deputy Director, and Registrar.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "central-library",
+    "name": "Central Library",
+    "category": "academic",
+    "lat": 23.81372,
+    "lng": 86.44195,
+    "image": "assets/images/central-library.jpg",
+    "tag": "7-Storey Modern Facility",
+    "description": "One of the largest automated institutional libraries in Eastern India. Spans seven floors equipped with RFID automated kiosks, over 1.5 lakh physical volumes, and continuous access to world-renowned research journals and e-resources.",
+    "officialUrl": "https://library.iitism.ac.in/"
+  },
+  {
+    "id": "new-academic-complex",
+    "name": "New Academic Complex (NAC)",
+    "category": "academic",
+    "lat": 23.81530,
+    "lng": 86.43980,
+    "image": "assets/images/new-academic-complex.jpg",
+    "tag": "Academic Core",
+    "description": "Multistorey complex housing modern multimedia lecture halls, smart classrooms, departmental faculty chambers, and high-performance computational facilities for undergraduate and postgraduate students.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "golden-jubilee-theatre",
+    "name": "Golden Jubilee Lecture Theatre (GJLT)",
+    "category": "academic",
+    "lat": 23.81485,
+    "lng": 86.44020,
+    "image": "assets/images/golden-jubilee-lecture-theatre.jpg",
+    "tag": "Lecture Complex",
+    "description": "Flagship multi-theatre lecture complex built to mark the institute's Golden Jubilee. Hosts large foundational course lectures, national conferences, academic workshops, and keynote addresses.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "central-research-facility",
+    "name": "Central Research Facility (CRF / iRh)",
+    "category": "research",
+    "lat": 23.81590,
+    "lng": 86.44070,
+    "image": "assets/images/science-block.jpg",
+    "tag": "Centralized Instrumentation",
+    "description": "State-of-the-art analytical research hub housing major instruments including FESEM, HRTEM, Powder XRD, Single Crystal XRD, VSM, Raman Spectrometer, and the advanced Cell Culture Laboratory.",
+    "officialUrl": "https://people.iitism.ac.in/~research/crf/"
+  },
+  {
+    "id": "mme-lab",
+    "name": "Materials & Metallurgical Engg. Labs",
+    "category": "research",
+    "lat": 23.81490,
+    "lng": 86.44210,
+    "image": "assets/images/mme-lab.jpg",
+    "tag": "Advanced Metallurgy",
+    "description": "Specialized laboratory facilities equipped for metallography, mechanical testing, XRD characterization, corrosion analysis, and material synthesis, serving core metallurgical research.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "central-workshop",
+    "name": "Central Workshop & Micro-Machining Lab",
+    "category": "research",
+    "lat": 23.81620,
+    "lng": 86.44210,
+    "image": "assets/images/workshop-building.jpg",
+    "tag": "Fabrication & Machining",
+    "description": "Comprehensive engineering fabrication hub including machining, foundry, smithy, welding, and Dr. Vivek Bajpai's dedicated Micro-Machining and Micro-Fabrication Laboratory.",
+    "officialUrl": "https://people.iitism.ac.in/~vivek/lab.html"
+  },
+  {
+    "id": "student-activity-centre",
+    "name": "Student Activity Centre (SAC)",
+    "category": "sports",
+    "lat": 23.81240,
+    "lng": 86.43890,
+    "image": "assets/images/student-activity-centre.jpg",
+    "tag": "Student Life & Clubs",
+    "description": "The energetic nerve centre of student societies, cultural chapters, music rooms, dramatics studios, debate societies, robotics clubs, and the Student Senate council offices.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "oval-ground",
+    "name": "Oval Ground & Heritage Lawns",
+    "category": "sports",
+    "lat": 23.81380,
+    "lng": 86.44070,
+    "image": "assets/images/oval-ground.jpg",
+    "tag": "Historic Athletic Ground",
+    "description": "The expansive, picturesque green oval directly facing the Heritage Building. Venue for inter-IIT sports tournaments, annual athletic meets, ceremonial parades, and convocation festivities.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "management-dept",
+    "name": "Department of Management Studies & Industrial Engg.",
+    "category": "academic",
+    "lat": 23.81510,
+    "lng": 86.44260,
+    "image": "assets/images/management-department.jpg",
+    "tag": "MBA & Industrial Engg.",
+    "description": "Houses NIRF top-ranked management faculty, modern case discussion rooms, business analytics labs, and executive development seminar chambers.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "diamond-hostel",
+    "name": "Diamond Hostel (Built 1926)",
+    "category": "hostel",
+    "lat": 23.81280,
+    "lng": 86.44220,
+    "image": "assets/images/diamond-hostel.jpg",
+    "tag": "Founding Heritage Residence",
+    "description": "Built alongside the founding of the Indian School of Mines in 1926. Renowned for spacious colonial corridors, 15-foot high ceilings, historic inner quadrangle, and an unbroken legacy of student camaraderie.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "jasper-hostel",
+    "name": "Jasper Hostel",
+    "category": "hostel",
+    "lat": 23.81750,
+    "lng": 86.43850,
+    "image": "assets/images/jasper-hostel.jpg",
+    "tag": "Contemporary Hall of Residence",
+    "description": "One of the largest modern student residential towers on campus, featuring high-speed optical fiber connectivity, dining halls, reading rooms, and indoor recreational areas.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "rosaline-hostel",
+    "name": "Rosaline Hostel",
+    "category": "hostel",
+    "lat": 23.81820,
+    "lng": 86.44150,
+    "image": "assets/images/rosaline-hostel.jpg",
+    "tag": "Women Scholar Residence",
+    "description": "Modern multi-storey hostel providing safe, comfortable, and vibrant residential facilities for undergraduate, postgraduate, and doctoral women scholars.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  },
+  {
+    "id": "admin-block",
+    "name": "Administrative Block Wing",
+    "category": "administrative",
+    "lat": 23.81400,
+    "lng": 86.44150,
+    "image": "assets/images/admin-block.jpg",
+    "tag": "Governance & Academic Section",
+    "description": "Adjoins the central complex, housing Dean of Academic Affairs, Dean of Student Welfare, International Relations cell, and Finance & Accounts sections.",
+    "officialUrl": "https://www.iitism.ac.in/"
+  }
+]
